@@ -1,0 +1,8 @@
+# Ignorando o arquivo .env na raiz do projeto (Arquivo de configuração AWS)
+.env
+
+# Ignorando a pasta envBootcampDE (Ambiente virtual)
+/envBootcampDE
+
+# Ignorando eventos gerados .json
+*.json
