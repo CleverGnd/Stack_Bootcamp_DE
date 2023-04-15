@@ -6,6 +6,12 @@ import os  # biblioteca para manipulação de arquivos e variáveis de ambiente
 
 # Função para carregar as variáveis de ambiente
 def createTables(cur):
+    """
+    Cria as tabelas Customers, Products e Orders no banco de dados.
+
+    :param conn: objeto de conexão com o banco de dados
+    :return: mensagem de sucesso
+    """
     try:
         # Cria a tabela Customers
         cur.execute("""
@@ -105,7 +111,9 @@ conn = psycopg2.connect(
     password=os.environ.get('DB_PASSWORD')
 )
 
-numClients = int(os.environ.get('numClients'))
+# Edite a quantidade de clientes que serão gerados
+numClients = 500
+print(f"Serão gerados {numClients} clientes.")
 
 # Cria um cursor para executar as instruções SQL
 cur = conn.cursor()
